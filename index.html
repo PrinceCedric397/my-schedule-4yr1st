@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Class Schedule</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+    body { background-color: #0f172a; color: #f8fafc; padding: 20px; display: flex; justify-content: center; }
+    .container { width: 100%; max-width: 420px; }
+    header { text-align: center; margin-bottom: 24px; }
+    header h1 { font-size: 1.5rem; font-weight: 700; color: #38bdf8; }
+    header p { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
+    .day-section { background: #1e293b; border-radius: 14px; padding: 16px; margin-bottom: 16px; border: 1px solid #334155; }
+    .day-title { font-size: 1rem; font-weight: 600; color: #e2e8f0; margin-bottom: 12px; border-bottom: 1px solid #334155; padding-bottom: 6px; }
+    .class-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; }
+    .class-item:not(:last-child) { border-bottom: 1px dashed #334155; }
+    .class-info h4 { font-size: 0.95rem; font-weight: 600; color: #f1f5f9; }
+    .class-info span { font-size: 0.8rem; color: #94a3b8; }
+    .class-time { font-size: 0.8rem; font-weight: 500; color: #38bdf8; text-align: right; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Class Schedule</h1>
+      <p id="current-date">Today</p>
+    </header>
 
+    <!-- Halimbawa: Monday -->
+    <div class="day-section">
+      <div class="day-title">Monday</div>
+      <div class="class-item">
+        <div class="class-info">
+          <h4>Data Structures</h4>
+          <span>Room 402</span>
+        </div>
+        <div class="class-time">08:00 AM - 11:00 AM</div>
+      </div>
+    </div>
+
+    <!-- Halimbawa: Tuesday -->
+    <div class="day-section">
+      <div class="day-title">Tuesday</div>
+      <div class="class-item">
+        <div class="class-info">
+          <h4>Web Development</h4>
+          <span>Lab 3</span>
+        </div>
+        <div class="class-time">01:00 PM - 04:00 PM</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const options = { weekday: 'long', month: 'short', day: 'numeric' };
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('en-US', options);
+  </script>
+</body>
+</html>
